@@ -7,42 +7,51 @@ function getComputerChoice() {
     }
 }
 
-// console.log(getComputerChoice()); Working
-
 function playRound(playerSelection, computerSelection) {
-    console.log(`You chose: ${playerSelection.toUpperCase()}`);
-    console.log(`The computer chose: ${computerSelection.toUpperCase()}`);
-    if(playerSelection.toLowerCase() == computerSelection) return 0;
-    else if(playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors'
-         || playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock'
-         || playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') return 1;
+    if(playerSelection === computerSelection) return 0;
+    else if(playerSelection === 'rock' && computerSelection === 'scissors' ||
+    playerSelection === 'paper' && computerSelection === 'rock' || 
+    playerSelection === 'scissors' && computerSelection === 'paper') return 1;
     else return -1;
 }
 
-// const playerSelection = "ROCK";
-// const computerSelection = getComputerChoice();
-// console.log(playRound(playerSelection, computerSelection)); Working
+function getPlayerChoice() {
+    let rock = document.querySelector('#rock');
+    let paper = document.querySelector('#paper');
+    let scissors = document.querySelector('#scissors');
 
-function game(rounds = 5) {
-    rounds = prompt("How many rounds do you want to play?", 5);
-    let count = 0, playerScore = 0, computerScore = 0, playerSelection = '';
-    while(count < rounds && playerSelection !== null) {
-        count++;
-        playerSelection = prompt('Choose Rock, Paper, or Scissors:', 'rock');
-        if(playerSelection === null) break;
-        let computerSelection = getComputerChoice();
-        switch(playRound(playerSelection, computerSelection)) {
-            case 1: playerScore++; break;
-            case -1: computerScore++; break;
-            case 0: break;
-        }
+    switch(choice) {
+        case rock: return 'rock';
+        case paper: return 'paper';
+        case scissors: return 'scissors';
     }
-    console.log(`Game Over!\n
-    Your Score: ${playerScore}\n
-    Computer Score: ${computerScore}`);
-    if(playerScore > computerScore) return 'You Won!';
-    else if(playerScore < computerScore) return 'The Computer Won!';
-    else return 'It\'s a Tie!';
 }
 
-console.log(game());
+let buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', getPlayerChoice));
+
+console.log();
+
+// function game(rounds = 5) {
+//     rounds = prompt("How many rounds do you want to play?", 5);
+//     let count = 0, playerScore = 0, computerScore = 0, playerSelection = '';
+//     while(count < rounds && playerSelection !== null) {
+//         count++;
+//         playerSelection = prompt('Choose Rock, Paper, or Scissors:', 'rock');
+//         if(playerSelection === null) break;
+//         let computerSelection = getComputerChoice();
+//         switch(playRound(playerSelection, computerSelection)) {
+//             case 1: playerScore++; break;
+//             case -1: computerScore++; break;
+//             case 0: break;
+//         }
+//     }
+//     console.log(`Game Over!\n
+//     Your Score: ${playerScore}\n
+//     Computer Score: ${computerScore}`);
+//     if(playerScore > computerScore) return 'You Won!';
+//     else if(playerScore < computerScore) return 'The Computer Won!';
+//     else return 'It\'s a Tie!';
+// }
+
+// console.log(game());
