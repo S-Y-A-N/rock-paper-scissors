@@ -1,3 +1,8 @@
+// Game Logic
+
+let playerScore = 0, compScore = 0;
+let roundResult = '';
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
     switch(choice) {
@@ -7,40 +12,34 @@ function getComputerChoice() {
     }
 }
 
-function playRound(e) {
-    let playerChoice = e.target.id;
-    let compChoice = getComputerChoice();
-    console.log(playerChoice);
-    if(playerChoice === compChoice) return 0;
-    else if(playerChoice === 'rock' && compChoice === 'scissors' ||
-    playerChoice === 'paper' && compChoice === 'rock' || 
-    playerChoice === 'scissors' && compChoice === 'paper') return 1;
-    else return -1;
-}
-
-function game() {
-    let playerScore = 0, compScore = 0;
-    for(let i = 0; i < 3; i++) {
-        switch(playRound) {
-            case 1: playerScore++; break;
-            case -1: compScore++; break;
-            case 0: break;
-        }
+function playRound(playerChoice, compChoice) {
+    if (playerChoice === compChoice) {
+        roundResult = 'tie';
     }
-    console.log(`playerScore = ${playerScore} | compScore = ${compScore}`)
+    else if (
+    playerChoice === 'rock' && compChoice === 'scissors' ||
+    playerChoice === 'paper' && compChoice === 'rock' || 
+    playerChoice === 'scissors' && compChoice === 'paper') {
+        playerScore++;
+        roundResult = 'player'
+    }
+    else {
+        compScore++;
+        roundResult = 'comp'
+    }
 }
 
-let buttons = document.querySelectorAll('button');
-buttons.forEach(button => {
-    button.addEventListener('click', playRound, true);
-});
 
-game();
+// UI Logic
+
+const rockBtn = document.getElementById('#rock');
+const paperBtn = document.getElementById('#paper');
+const scissorsBtn = document.getElementById('#scissors');
+
 
 
 /*
 pseudo code
-    - attach event listeners to buttons to play a round
-    - playRound() => 
+    - get player choice by handling click
 */
 
