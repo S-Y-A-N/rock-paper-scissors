@@ -62,3 +62,27 @@ main .container {
     justify-content: center;
     align-items: center;
 }
+
+footer p {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer a:hover {
+    font-weight: bold;
+}
+
+.fa-github {
+    margin-left: 5px;
+}
