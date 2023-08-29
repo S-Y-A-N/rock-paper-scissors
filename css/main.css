@@ -21,7 +21,7 @@ header {
 
 h1 {
     text-align: center;
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 400;
     margin: 0;
     font-family: 'Tilt Prism', cursive;
@@ -33,9 +33,9 @@ h2, h3, h4 {
     font-size: 1.5em;
 }
 
-main .info {
+main .game-info {
     flex-direction: column;
-    margin: 50px auto ;
+    margin: 50px auto;
 }
 
 main .rps-container {
