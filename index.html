@@ -17,18 +17,36 @@
     </header>
 
     <main>
-        <div class="info flex-center">
+        <div class="game-info flex-center">
             <h2>You are playing against your mighty computer!</h2>
             <h3>Prepare for trouble, Make it double!</h3>
             <h4>< Choose Wisely /></h4>
         </div>
+
         <div class="rps-container flex-center">
-            <button title="rock" class="player-choice" id="rock"><div>&#x1FAA8;</div></button>
-            <button title="paper" class="player-choice" id="paper"><div>&#x1F4C3;</div></button>
-            <button title="scissors" class="player-choice" id="scissors"><div>&#x2702;</div></button>
+            <button title="Rock" class="player-choice" id="rock"><div>&#x1FAA8;</div></button>
+            <button title="Paper" class="player-choice" id="paper"><div>&#x1F4C3;</div></button>
+            <button title="Scissors" class="player-choice" id="scissors"><div>&#x2702;</div></button>
         </div>
+
         <div class="image flex-center">
             <img src="media/rps-gon.gif" alt="rock-paper-scissors-gon">
+        </div>
+
+        <div class="score-info">
+            <p id="resultTitle"></p>
+            <p id="resultDesc"></p>
+        </div>
+
+        <div class="score-board">
+            <div class="player-score">
+                <div></div>
+                <p></p>
+            </div>
+            <div class="comp-score">
+                <div></div>
+                <p></p>
+            </div>
         </div>
     </main>
 
