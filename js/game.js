@@ -7,51 +7,40 @@ function getComputerChoice() {
     }
 }
 
-function playRound(playerSelection, computerSelection) {
-    if(playerSelection === computerSelection) return 0;
-    else if(playerSelection === 'rock' && computerSelection === 'scissors' ||
-    playerSelection === 'paper' && computerSelection === 'rock' || 
-    playerSelection === 'scissors' && computerSelection === 'paper') return 1;
+function playRound(e) {
+    let playerChoice = e.target.id;
+    let compChoice = getComputerChoice();
+    console.log(playerChoice);
+    if(playerChoice === compChoice) return 0;
+    else if(playerChoice === 'rock' && compChoice === 'scissors' ||
+    playerChoice === 'paper' && compChoice === 'rock' || 
+    playerChoice === 'scissors' && compChoice === 'paper') return 1;
     else return -1;
 }
 
-function getPlayerChoice() {
-    let rock = document.querySelector('#rock');
-    let paper = document.querySelector('#paper');
-    let scissors = document.querySelector('#scissors');
-
-    switch(choice) {
-        case rock: return 'rock';
-        case paper: return 'paper';
-        case scissors: return 'scissors';
+function game() {
+    let playerScore = 0, compScore = 0;
+    for(let i = 0; i < 3; i++) {
+        switch(playRound) {
+            case 1: playerScore++; break;
+            case -1: compScore++; break;
+            case 0: break;
+        }
     }
+    console.log(`playerScore = ${playerScore} | compScore = ${compScore}`)
 }
 
 let buttons = document.querySelectorAll('button');
-buttons.forEach(button => button.addEventListener('click', getPlayerChoice));
+buttons.forEach(button => {
+    button.addEventListener('click', playRound, true);
+});
 
-console.log();
+game();
 
-// function game(rounds = 5) {
-//     rounds = prompt("How many rounds do you want to play?", 5);
-//     let count = 0, playerScore = 0, computerScore = 0, playerSelection = '';
-//     while(count < rounds && playerSelection !== null) {
-//         count++;
-//         playerSelection = prompt('Choose Rock, Paper, or Scissors:', 'rock');
-//         if(playerSelection === null) break;
-//         let computerSelection = getComputerChoice();
-//         switch(playRound(playerSelection, computerSelection)) {
-//             case 1: playerScore++; break;
-//             case -1: computerScore++; break;
-//             case 0: break;
-//         }
-//     }
-//     console.log(`Game Over!\n
-//     Your Score: ${playerScore}\n
-//     Computer Score: ${computerScore}`);
-//     if(playerScore > computerScore) return 'You Won!';
-//     else if(playerScore < computerScore) return 'The Computer Won!';
-//     else return 'It\'s a Tie!';
-// }
 
-// console.log(game());
+/*
+pseudo code
+    - attach event listeners to buttons to play a round
+    - playRound() => 
+*/
+
