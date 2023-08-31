@@ -30,17 +30,55 @@ function playRound(playerChoice, compChoice) {
     }
 }
 
+function updateScoreboard(playerChoice, compChoice) {
+    switch(playerChoice) {
+        case 'rock':
+            playerChoiceIcon.textContent = '🪨';
+            playerScoreTitle.textContent = `Player: ${playerScore}`;
+            break;
+        case 'paper':
+            playerChoiceIcon.textContent = '📃';
+            playerScoreTitle.textContent = `Player: ${playerScore}`;
+            break;
+        case 'scissors':
+            playerChoiceIcon.textContent = '✂️';
+            playerScoreTitle.textContent = `Player: ${playerScore}`;
+            break;
+    }
+
+    switch(compChoice) {
+        case 'rock':
+            compChoiceIcon.textContent = '🪨';
+            compScoreTitle.textContent = `Computer: ${compScore}`;
+            break;
+        case 'paper':
+            compChoiceIcon.textContent = '📃';
+            compScoreTitle.textContent = `Computer: ${compScore}`;
+            break;
+        case 'scissors':
+            compChoiceIcon.textContent = '✂️';
+            compScoreTitle.textContent = `Computer: ${compScore}`;
+            break;
+    }
+}
+
 function isGameOver() {
     
 }
 
-// UI Logic
+// DOM Manipulation
 
 const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
+
 const resultTitle = document.getElementById('resultTitle');
 const resultDesc = document.getElementById('resultDesc');
+
+const playerChoiceIcon = document.getElementById('playerChoiceIcon');
+const playerScoreTitle = document.getElementById('playerScoreTitle');
+const compChoiceIcon = document.getElementById('compChoiceIcon');
+const compScoreTitle = document.getElementById('compScoreTitle');
 
 rockBtn.addEventListener('click', () => handleClick('rock'));
 paperBtn.addEventListener('click', () => handleClick('paper'));
@@ -50,10 +88,20 @@ function handleClick(playerChoice) {
     let compChoice = getComputerChoice();
     playRound(playerChoice, compChoice);
     switch(roundResult) {
-        case 'tie': resultTitle.textContent = "This round was a Tie!"; break;
-        case 'player': resultTitle.textContent = "You won the round!"; break;
-        case 'comp': resultTitle.textContent = "You lost the round!"; break;
+        case 'tie':
+            resultTitle.textContent = "This round was a Tie!";
+            resultDesc.textContent = '';
+            break;
+        case 'player':
+            resultTitle.textContent = "You won the round!";
+            resultDesc.textContent = `${playerChoice} beats ${compChoice}`;
+            break;
+        case 'comp':
+            resultTitle.textContent = "You lost the round!";
+            resultDesc.textContent = `${compChoice} beats ${playerChoice}`;
+            break;
     }
+    updateScoreboard(playerChoice, compChoice);
 }
 
 /*
