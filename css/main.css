@@ -10,6 +10,7 @@ body {
     background-color: var(--primary-light);
     color: white;
     font-family: 'Alegreya Sans SC', sans-serif;
+    text-align: center;
     padding: 0;
     margin: 0;
 }
@@ -27,7 +28,8 @@ h1 {
     font-family: 'Tilt Prism', cursive;
 }
 
-h2, h3, h4 {
+
+p {
     font-weight: lighter;
     margin: 5px;
     font-size: 1.5em;
@@ -105,4 +107,49 @@ footer a:hover {
 
 .fa-github {
     margin-left: 5px;
+}
+
+.score-info {
+    flex-direction: column;
+}
+
+.score-info h3 {
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.score-info h2 {
+    margin-bottom: 0;
+}
+
+.player-score, .comp-score {
+    flex-direction: column;
+}
+
+.score-board {
+    font-size: 20px;
+    justify-content: space-evenly;
+}
+
+.score-board div div {
+    font-size: 48px;
+}
+
+.hidden {
+    display: none;
+}
+
+.restart-button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-dark);
+    color: hsl(256, 64%, 14%);;
+    font-weight: bold;
+}
+
+.restart-button:hover {
+    cursor: pointer;
+    background-color: var(--secondary-light);
 }
