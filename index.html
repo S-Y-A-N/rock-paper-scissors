@@ -18,9 +18,9 @@
 
     <main>
         <div class="game-info flex-center">
-            <h2>You are playing against your mighty computer!</h2>
-            <h3>Prepare for trouble, Make it double!</h3>
-            <h4>< Choose Wisely /></h4>
+            <p>You are playing against your mighty computer!</p>
+            <p>Prepare for trouble, Make it double!</p>
+            <p>< Choose Wisely /></p>
         </div>
 
         <div class="rps-container flex-center">
@@ -33,20 +33,25 @@
             <img src="media/rps-gon.gif" alt="rock-paper-scissors-gon">
         </div>
 
-        <div class="score-info">
-            <p id="resultTitle"></p>
-            <p id="resultDesc"></p>
+        <div class="score-info flex-center">
+            <h2 id="resultTitle"></h2>
+            <h3 id="resultDesc"></h3>
         </div>
 
-        <div class="score-board">
+        <div class="score-board flex-center">
             <div class="player-score">
-                <div></div>
-                <p></p>
+                <div id="playerChoiceIcon"></div>
+                <p id="playerScoreTitle"></p>
             </div>
-            <div class="comp-score">
-                <div></div>
-                <p></p>
+            <div class="comp-score flex-center">
+                <div id="compChoiceIcon"></div>
+                <p id="compScoreTitle"></p>
             </div>
+        </div>
+
+        <div class="endgame hidden">
+            <p id="gameResult"></p>
+            <button class="restart-button">Play Again</button>
         </div>
     </main>
 
