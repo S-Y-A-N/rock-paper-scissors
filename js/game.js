@@ -81,12 +81,12 @@ const scoreboard = document.querySelector('.score');
 const endgame = document.querySelector('.endgame');
 const restartBtn = document.querySelector('.restart-button');
 
-rockBtn.addEventListener('click', () => handleClick('rock'));
-paperBtn.addEventListener('click', () => handleClick('paper'));
-scissorsBtn.addEventListener('click', () => handleClick('scissors'));
+rockBtn.addEventListener('click', () => playRound('rock'));
+paperBtn.addEventListener('click', () => playRound('paper'));
+scissorsBtn.addEventListener('click', () => playRound('scissors'));
 restartBtn.addEventListener('click', restartGame)
 
-function handleClick(playerChoice) {
+function playRound(playerChoice) {
     scoreboard.classList.remove('hidden');
     let compChoice = getComputerChoice();
     playRound(playerChoice, compChoice);
