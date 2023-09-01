@@ -135,10 +135,6 @@ footer a:hover {
     font-size: 48px;
 }
 
-.hidden {
-    display: none;
-}
-
 .restart-button {
     width: 100px;
     height: 40px;
@@ -147,9 +143,22 @@ footer a:hover {
     background-color: var(--secondary-dark);
     color: hsl(256, 64%, 14%);;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .restart-button:hover {
     cursor: pointer;
     background-color: var(--secondary-light);
+}
+
+.hidden {
+    display: none;
+}
+
+.endgame {
+    margin-top: 40px;
+}
+
+.button-disabled {
+    pointer-events: none;
 }
