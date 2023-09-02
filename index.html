@@ -24,12 +24,12 @@
         </div>
 
         <div class="rps-container flex-center">
-            <button title="Rock" class="player-choice" id="rock"><div>&#x1FAA8;</div></button>
-            <button title="Paper" class="player-choice" id="paper"><div>&#x1F4C3;</div></button>
-            <button title="Scissors" class="player-choice" id="scissors"><div>&#x2702;</div></button>
+            <button title="Rock" class="player-choice" id="rock"><img src="images/rock.png" alt="rock"></button>
+            <button title="Paper" class="player-choice" id="paper"><img src="images/paper.png" alt="paper"></button>
+            <button title="Scissors" class="player-choice" id="scissors"><img src="images/scissors.png" alt="scissors"></button>
         </div>
 
-        <div class="image flex-center">
+        <div class="image flex-center hidden">
             <img src="media/rps-gon.gif" alt="rock-paper-scissors-gon">
         </div>
 
@@ -41,11 +41,15 @@
     
             <div class="score-board flex-center">
                 <div class="player-score">
-                    <div id="playerChoiceIcon"></div>
+                    <div>
+                        <img id="playerChoiceIcon" src="" alt="">
+                    </div>
                     <p id="playerScoreTitle"></p>
                 </div>
                 <div class="comp-score flex-center">
-                    <div id="compChoiceIcon"></div>
+                    <div>
+                        <img id="compChoiceIcon" src="" alt="">
+                    </div>
                     <p id="compScoreTitle"></p>
                 </div>
             </div>
