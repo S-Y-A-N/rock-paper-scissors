@@ -33,30 +33,30 @@ function playRound(playerChoice, compChoice) {
 function updateScoreboard(playerChoice, compChoice) {
     switch (playerChoice) {
         case 'rock':
-            playerChoiceIcon.textContent = '🪨';
+            playerChoiceIcon.src = "images/rock.png";
             playerScoreTitle.textContent = `Player: ${playerScore}`;
             break;
         case 'paper':
-            playerChoiceIcon.textContent = '📃';
+            playerChoiceIcon.src = "images/paper.png";
             playerScoreTitle.textContent = `Player: ${playerScore}`;
             break;
         case 'scissors':
-            playerChoiceIcon.textContent = '✂️';
+            playerChoiceIcon.src = "images/scissors.png";
             playerScoreTitle.textContent = `Player: ${playerScore}`;
             break;
     }
 
     switch (compChoice) {
         case 'rock':
-            compChoiceIcon.textContent = '🪨';
+            compChoiceIcon.src = "images/rock.png";
             compScoreTitle.textContent = `Computer: ${compScore}`;
             break;
         case 'paper':
-            compChoiceIcon.textContent = '📃';
+            compChoiceIcon.src = "images/paper.png";
             compScoreTitle.textContent = `Computer: ${compScore}`;
             break;
         case 'scissors':
-            compChoiceIcon.textContent = '✂️';
+            compChoiceIcon.src = "images/scissors.png";
             compScoreTitle.textContent = `Computer: ${compScore}`;
             break;
     }
